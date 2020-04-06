@@ -17,7 +17,13 @@
 }
 
 .bottom-right{
-  margin-bottom:3px;
+  padding-top: 10px;
   padding-left:80px;
   color:black;
+}
+
+.icon{
+  color: red;
+  padding-top: 8px;
+
 }
