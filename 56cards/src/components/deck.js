@@ -24,7 +24,7 @@ export default class Deck extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className='border' id="deck">
       </div>
     )
   }
