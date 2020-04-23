@@ -5,13 +5,12 @@ import Button from 'react-bootstrap/button'
 export default class Instructions extends React.Component{
 
 
- 
-   onClick =(e)=>{
-    if(e.target.value === "Next Page"){
-      console.log('hi')
-    }
-
+  clickValue = (e) =>{
+    this.props.onClick(e.target.value)
   }
+
+
+
 
   render(){
     return(
@@ -22,8 +21,8 @@ export default class Instructions extends React.Component{
         {this.props.page}
     </p>
     </div> <br/>
-    <Button onClick={this.onClick} size='sm' variant='outline-info' as='input' type='button' value="Prev Page"/>
-    <Button onClick={this.onClick} size='sm' variant='outline-info' as='input' type='button' value="Next Page"/>
+    <Button onClick={this.clickValue} size='sm' variant='outline-info' as='input' type='button' value="Prev Page"/>
+    <Button onClick={this.clickValue} size='sm' variant='outline-info' as='input' type='button' value="Next Page"/>
     </div>
 
   )}
