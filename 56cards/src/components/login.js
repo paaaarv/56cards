@@ -11,7 +11,10 @@ export default class Login extends React.Component{
   render(){
     return(
       <Form>
-      <Form.Label> Hi </Form.Label>
+      <Form.Label> Username:  </Form.Label>
+      <Form.Control type="email" placeholder="name@example.com" />
+      <Form.Label> Password: </Form.Label>
+      <Form.Control type="password" placeholder="Password" />
       </Form>
 
 
