@@ -8,26 +8,37 @@ export default class Deck extends React.Component{
 
   constructor(props){
     super(props)
-    this.deal = this.deal.bind(this)
-    this.addCard = this.addCard.bind(this)
     this.state = {
       cards:[{name: "K", value: "hearts"},{name: "K", value: "diamonds"},{name: "K", value: "spades"},
       {name: "K", value: "clubs"}, {name: "J", value: "hearts"},{name: "J", value: "diamonds"},
       {name: "J", value: "spades"},{name: "J", value: "clubs"}]
     }
+    this.deal = this.deal.bind(this)
+
   }
-  addCard = () => {
+
+  componentDidUpdate(){
+    console.log('hi')
+  }
+  addCard(){
+    this.setState = {
+      hello:'hi'
+    }
     debugger
 
   }
   deal = () => {
+    let counter = 0
+    let hand = <Hand key={counter} onChange = {this.addCard}/>
     for(let i=0; i<6; i++){
-      let number = Math.floor(Math.random() * (this.state.cards.length - 1)) + 1
-      console.log(number)
+      let number = [Math.floor(Math.random() * (this.state.cards.length - 1)) + 1]
+      let card = this.state.cards.splice(number)
+      console.log(card)
+      console.log(this.state.cards)
       let hand = <Hand key={i} addCard = {this.addCard}/>
         for(let x=0; x<4;x++){
           debugger
-          hand.addCard(this.state.cards[number])
+          hand.props.addCard(this.state.cards[card])
 
         }
 
